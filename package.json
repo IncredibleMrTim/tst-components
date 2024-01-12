@@ -1,6 +1,6 @@
 {
   "name": "@timsmarttechnology/components",
-  "version": "0.0.5",
+  "version": "0.0.16",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
