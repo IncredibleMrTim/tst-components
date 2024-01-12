@@ -1,11 +1,4 @@
 import { Button as TailwindButton } from '@material-tailwind/react';
-import type { ButtonProps as TailwindButtonProps } from '@material-tailwind/react';
-import { Ref } from 'react';
-
-interface ButtonProps extends TailwindButtonProps {
-  children: React.ReactNode;
-  ref?: Ref<HTMLButtonElement> | undefined;
-}
 
 export const Button: React.FC<ButtonProps> = ({
   onClick,
