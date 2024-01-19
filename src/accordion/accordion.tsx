@@ -12,38 +12,48 @@ export const Accordion: React.FC<AccordionProps> = ({
   children,
   title,
   icon,
+  iconOpen,
+  iconClosed,
 }) => {
   const [accordionOpen, setAccordionOpen] = useState(open ?? false);
 
   const renderHeading = () => {
     return (
-      <div className={`flex justify-between mx-auto heading-wrapper`}>
-        <h3 className='text-tst-primary-black/80 flex w-full gap-5 heading-left'>
+      <>
+        <div className='text-tst-primary-black/80 flex w-full gap-5 heading-title'>
           {icon && (
             <Icon
               icon={icon}
-              className={`w-7 h-70 ${
+              className={`w-7 h-70  ${
                 accordionOpen
-                  ? `xsm:text-tst-primary-gray-dark/90 md:text-tst-primary-white/90`
-                  : `xsm:text-tst-primary-gray-dark/50 md:text-tst-primary-white/60`
-              } duration-30 heading-icon`}
+                  ? `xsm:text-tst-primary-gray-dark/90 md:text-tst-primary-white/90 heading-icon-color-open`
+                  : `xsm:text-tst-primary-gray-dark/50 md:text-tst-primary-white/60 heading-icon-color-closed`
+              } duration-30`}
             />
           )}
-          <div
+          <h3
             className={`${
               accordionOpen
-                ? `xsm:text-tst-primary-gray-dark/90 md:md:text-tst-primary-white/90`
-                : `xsm:text-tst-primary-gray-dark/50 md:md:text-tst-primary-white/60`
-            } duration-30 heading-title`}
+                ? `xsm:text-tst-primary-gray-dark/90 md:md:text-tst-primary-white/90 heading-text-color-open`
+                : `xsm:text-tst-primary-gray-dark/50 md:md:text-tst-primary-white/60 heading-text-color-closed`
+            } duration-30 heading-title py-5`}
           >
             {title}
-          </div>
-        </h3>
+          </h3>
+        </div>
         <Icon
-          className='text-tst-primary-white/60 w-6 h-70 heading-chevron'
-          icon={`${accordionOpen ? `ChevronUpIcon` : `ChevronDownIcon`}`}
+          className={`${
+            accordionOpen
+              ? `xsm:text-tst-primary-gray-dark/90 md:md:text-tst-primary-white/90 heading-action-icon-color-open`
+              : `xsm:text-tst-primary-gray-dark/50 md:md:text-tst-primary-white/60 heading-action-icon-color-closed`
+          } w-6 h-70 heading-open-close-icon-color`}
+          icon={`${
+            accordionOpen
+              ? iconOpen ?? `ChevronUpIcon`
+              : iconClosed ?? `ChevronDownIcon`
+          }`}
         />
-      </div>
+      </>
     );
   };
 
@@ -60,16 +70,16 @@ export const Accordion: React.FC<AccordionProps> = ({
           placeholder={undefined}
         >
           <div
-            className={`${
+            className={`transition: ${
               accordionOpen
-                ? `transition: rounded-b-none xsm:bg-tst-primary-slate-lighter md:bg-tst-primary-red-dark/80 !text-tst-primary-gray duration-300`
-                : `transition: rounded-b-md xsm:bg-tst-primary-slate-lighter md:bg-tst-primary-red-dark/60 !text-tst-primary-gray duration-300`
-            } w-full  rounded-t-md px-8 border-tst-primary-red/10 border-t-[1px] border-x-[1px] accordion-heading`}
+                ? `rounded-b-none xsm:bg-tst-primary-slate-lighter md:bg-tst-primary-red-dark/80 !text-tst-primary-gray duration-[500ms]`
+                : `rounded-b-md xsm:bg-tst-primary-slate-lighter md:bg-tst-primary-red-dark/60 !text-tst-primary-gray duration-[500ms]`
+            } w-full rounded-t-md px-8 border-tst-primary-red/10 border-t-[1px] border-x-[1px] flex justify-between mx-auto heading accordion-heading`}
           >
             {renderHeading()}
           </div>
         </AccordionHeader>
-        <AccordionBody>
+        <AccordionBody data-testid='accordion-body'>
           <div className='bg-tst-primary-slate-lighter/10 px-8 rounded-b-sm accordion-body'>
             {children}
           </div>

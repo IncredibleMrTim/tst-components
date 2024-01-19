@@ -1,0 +1,35 @@
+@import './typography.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #444444;
+}
+
+#root {
+  @apply xsm:w-full md:w-4/6 bg-tst-primary-white text-center mx-auto pb-14 min-h-[100vh];
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer base {
+  @font-face {
+    font-family: 'font-roboto-regular';
+    src: url('./fonts/Roboto-regular.ttf');
+  }
+  @font-face {
+    font-family: 'font-roboto-light';
+    src: url('./fonts/Roboto-Light.ttf');
+  }
+}

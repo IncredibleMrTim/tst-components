@@ -1,0 +1,83 @@
+import {
+  Canvas,
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Description,
+
+} from '@storybook/blocks';
+import { Accordion } from './accordion';
+
+import * as AccordionStories from './accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+The Accordion component is a wrapper around the Material Tailwind Accordion component. the wrapper provides default styling and a custom heading that can be overridden.
+
+## Example
+
+<Story {...AccordionStories.Primary.args} />
+
+<Controls />
+
+## Class Names
+
+The following class names can be overridden:
+
+<table className='w-full'>
+  <tr>
+    <th>Class Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>`heading`</td>
+    <td>The root element wrapping the accordion</td>
+  </tr>
+  <tr>
+    <td>`heading-title`</td>
+    <td>Wrapper around the title text and icon</td>
+  </tr>
+  <tr>
+    <td>`heading-icon-color-open`</td>
+    <td>the title icon color when the accordion is open</td>
+  </tr>
+  <tr>
+    <td>`heading-icon-color-closed`</td>
+    <td>the title icon color when the accordion is closed</td>
+  </tr>
+  <tr>
+    <td>`heading-text-color-closed`</td>
+    <td>the title text color when the accordion is closed</td>
+  </tr>
+  <tr>
+    <td>`heading-text-color-closed`</td>
+    <td>the title text color when the accordion is closed</td>
+  </tr>
+  <tr>
+    <td>`heading-action-icon-color-open`</td>
+    <td>the action icon color when the accordion is open</td>
+  </tr>
+  <tr>
+    <td>`heading-action-icon-color-closed`</td>
+    <td>the action icon color when the accordion is closed</td>
+  </tr>
+  <tr>
+    <td>`accordion-component`</td>
+    <td>the root element wrapping the accordion component</td>
+  </tr>
+  <tr>
+    <td>`accordion`</td>
+    <td>the tailwind accordion component</td>
+  </tr>
+  <tr>
+    <td>`accordion-heading`</td>
+    <td>the accordion heading wrapper</td>
+  </tr>
+  <tr>
+    <td>`accordion-body`</td>
+    <td>the accordion body wrapper</td>
+  </tr>
+</table>
