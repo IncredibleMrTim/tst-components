@@ -1,5 +1,5 @@
 {
-  "name": "@tst/components",
+  "name": "@tstech/components",
   "version": "0.0.23",
   "type": "module",
   "main": "dist/index.js",
@@ -86,5 +86,8 @@
   "description": "TimSmartTechnology Components Library",
   "bugs": {
     "url": "https://github.com/IncredibleMrTim/tst-components/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
