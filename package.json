@@ -1,9 +1,16 @@
 {
-  "name": "@timsmarttechnology/components",
+  "name": "@tst/components",
   "version": "0.0.23",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "license": "MIT",
+  "author": "TST <tim.smart@timsmarttechnology.co.uk>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IncredibleMrTim/tst-components.git"
+  },
+  "homepage": "https://github.com/IncredibleMrTim/tst-components.git",
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json && vite build",
@@ -75,5 +82,9 @@
     "vite": "^5.0.8",
     "vite-tsconfig-paths": "^4.2.3",
     "vitest": "^1.2.1"
+  },
+  "description": "TimSmartTechnology Components Library",
+  "bugs": {
+    "url": "https://github.com/IncredibleMrTim/tst-components/issues"
   }
 }
