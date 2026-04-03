@@ -20,4 +20,3 @@ const config: StorybookConfig = {
   docs: {},
 };
 export default config;
-npm pu
