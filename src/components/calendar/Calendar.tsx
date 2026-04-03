@@ -15,6 +15,7 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import { enGB } from "date-fns/locale";
 
 import { getContrastColor } from "@/utils/color";
+import { CalendarView } from "@/types/events";
 
 export interface CalendarEvent {
   id: string;
@@ -29,13 +30,7 @@ interface RBCEvent extends CalendarEvent {
   end: Date;
 }
 
-export enum CalendarView {
-  DAY = "day",
-  WEEK = "week",
-  WORK_WEEK = "work_week",
-  MONTH = "month",
-  AGENDA = "agenda",
-}
+export { CalendarView };
 
 interface CalendarProps {
   events: CalendarEvent[];
@@ -82,6 +77,7 @@ export const Calendar = ({
 
   return (
     <div className="w-full h-[calc(100vh-60px)] overflow-auto bg-gray-50">
+      {/* @ts-expect-error react-big-calendar types are incompatible with React 18 */}
       <RBCCalendar
           localizer={localizer}
           startAccessor={(event: RBCEvent) => event.start}
